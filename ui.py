@@ -26,9 +26,11 @@ def draw_sidebar(win, selected_algo, status_text, font_small, font_title, button
     sidebar_rect = pygame.Rect(WINDOW_WIDTH - SIDEBAR_WIDTH, 0, SIDEBAR_WIDTH, WINDOW_HEIGHT)
     pygame.draw.rect(win, SIDEBAR_BG, sidebar_rect)
 
-    # Title
-    title = font_title.render("Pathfinding Visualizer", True, TEXT_COLOR)
-    win.blit(title, (WINDOW_WIDTH - SIDEBAR_WIDTH + 12, 12))
+    # Title (split into two lines to fit)
+    title1 = font_small.render("Pathfinding", True, TEXT_COLOR)
+    title2 = font_small.render("Visualizer", True, TEXT_COLOR)
+    win.blit(title1, (WINDOW_WIDTH - SIDEBAR_WIDTH + 12, 12))
+    win.blit(title2, (WINDOW_WIDTH - SIDEBAR_WIDTH + 12, 28))
 
     # Algorithm label
     algo_label = font_small.render(f"Algorithm: {selected_algo}", True, TEXT_COLOR)
@@ -40,13 +42,13 @@ def draw_sidebar(win, selected_algo, status_text, font_small, font_title, button
 
     # Buttons drawn separately by caller
 
-    # Legend
-    y = WINDOW_HEIGHT - 150
+    # Legend (positioned to fit within window)
+    y = WINDOW_HEIGHT - 195
     legend_title = font_small.render("Legend:", True, TEXT_COLOR)
     win.blit(legend_title, (WINDOW_WIDTH - SIDEBAR_WIDTH + 12, y))
-    y += 20
+    y += 18
     for name, color in legend_items:
-        pygame.draw.rect(win, color, (WINDOW_WIDTH - SIDEBAR_WIDTH + 12, y, 20, 20))
+        pygame.draw.rect(win, color, (WINDOW_WIDTH - SIDEBAR_WIDTH + 12, y, 15, 15))
         txt = font_small.render(name, True, TEXT_COLOR)
-        win.blit(txt, (WINDOW_WIDTH - SIDEBAR_WIDTH + 40, y))
-        y += 28
+        win.blit(txt, (WINDOW_WIDTH - SIDEBAR_WIDTH + 32, y))
+        y += 24

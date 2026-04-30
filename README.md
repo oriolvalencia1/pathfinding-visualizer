@@ -1,7 +1,7 @@
 ![Demo](demo.gif)
 
 # Interactive visualizer for classical pathfinding algorithms
-
+![Screenshot](screenshot.png)
 Interactive visualizer for classical pathfinding algorithms (A*, Dijkstra, BFS) built from scratch in Python with Pygame. Demonstrates real-time algorithm animation, grid interaction, and maze generation via recursive division.
 
 ## Controls
